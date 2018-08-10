@@ -1,0 +1,65 @@
+$primary-color: #444;
+$secondary-color: #99b3e6;
+$show-home-image: true;
+$home-image: url(../img/network.png);
+$background-opacity: 0.8;
+
+@mixin easeOut ($time){
+  transition: all $time ease-out;
+}
+
+@mixin background {
+  @if $show-home-image {
+    //background: $home-image;
+    &#bg-img {
+      background: $home-image;
+      background-attachment: fixed;
+      background-size: cover;
+
+      &:after {
+        content: '';
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba($primary-color, $background-opacity);
+      }
+    }
+  }
+}
+
+// Set Text color
+@function set-text-color($color) {
+  @if (lightness($color) > 40) {
+    @return black;
+  } @else {
+    @return white;
+  }
+}
+
+// Media Query Mixins
+@mixin mediaSmall {
+  @media screen and (max-width: 500px){
+    @content;
+  }
+}
+
+@mixin mediaMedium {
+  @media screen and (max-width: 768px){
+    @content;
+  }
+}
+
+@mixin mediaLarge {
+  @media screen and (min-width: 769px) and (max-width: 1170px){
+    @content;
+  }
+}
+
+@mixin mediaXLarge {
+  @media screen and (min-width: 1171px){
+    @content;
+  }
+}
