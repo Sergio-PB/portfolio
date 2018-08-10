@@ -76,6 +76,7 @@
   &-branding {
     //visibility: visible;
     background: $primary-color;
+    filter: grayscale(100%);
     transform: translate3d(0, 100%, 0);
     @include easeOut(0.5s);
 

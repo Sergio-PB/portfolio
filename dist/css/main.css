@@ -47,6 +47,7 @@
       transform: translate3d(0, 0, 0); }
   .menu-branding {
     background: #444;
+    filter: grayscale(100%);
     transform: translate3d(0, 100%, 0);
     transition: all 0.5s ease-out; }
     .menu-branding.show {
@@ -141,16 +142,19 @@ h1, h2, h3 {
     font-size: 3rem;
     overflow: hidden;
     opacity: 0;
-    right: 2.1%; }
+    right: 1%; }
   h1.lg-heading, h2.lg-heading, h3.lg-heading {
     font-size: 7rem;
     line-height: 1;
     width: 100%; }
-    h1.lg-heading:hover sub-text, h2.lg-heading:hover sub-text, h3.lg-heading:hover sub-text {
-      overflow: hidden;
-      right: 0;
-      opacity: 1;
+    h1.lg-heading:hover, h2.lg-heading:hover, h3.lg-heading:hover {
+      color: #99b3e6;
       transition: all 0.5s ease-out; }
+      h1.lg-heading:hover sub-text, h2.lg-heading:hover sub-text, h3.lg-heading:hover sub-text {
+        overflow: hidden;
+        right: 0;
+        opacity: 1;
+        transition: all 0.5s ease-out; }
   h1.p, h2.p, h3.p {
     letter-spacing: -3.5rem; }
   h1.sm-heading, h2.sm-heading, h3.sm-heading {
@@ -221,7 +225,6 @@ main {
   grid-template-columns: repeat(3, 1fr); }
   .projects img {
     width: 100%;
-    top: auto;
     border: 3px white solid; }
     .projects img:hover {
       opacity: 0.5;

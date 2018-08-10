@@ -54,7 +54,7 @@ h1, h2, h3 {
     font-size: 3rem;
     overflow: hidden;
     opacity: 0;
-    right: 2.1%;
+    right: 1%;
   }
 
   &.lg-heading{
@@ -63,6 +63,8 @@ h1, h2, h3 {
     width: 100%;
 
     &:hover {
+      color: $secondary-color;
+      @include easeOut(0.5s);
       sub-text{
         overflow: hidden;
         right: 0;
