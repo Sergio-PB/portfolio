@@ -179,9 +179,12 @@ main {
 
   img {
     width: 100%;
+    margin-bottom: 1px;
+    max-height: 195px;
     position: relative;
     top: 50%;
-    transform: translate(0, -50%);
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     &:hover {
       opacity: 0.5;
@@ -191,6 +194,7 @@ main {
 
   div.img-container {
     height: 200px;
+    //width: 200px;
     margin: 5px 0;
     border: 3px white solid;
     &:hover {

@@ -38,8 +38,8 @@
 
   .menu-nav {
     height: 75vh;
-    transform: translate3d(-100%, 0 0);
-    font-size: 24px;
+    transform: translate3d(100%, 0 0);
+    //font-size: 24px;
   }
 
   .menu-branding {
@@ -47,9 +47,12 @@
     transform: translate3d(100%, 0, 0);
 
     .portrait {
-      background: white;
       width: 150px;
       height: 150px;
+      background: url('../img/portrait.jpg');
+      background-position: center;
+      background-size: 185px;
+      //filter: grayscale(100%);
     }
   }
 

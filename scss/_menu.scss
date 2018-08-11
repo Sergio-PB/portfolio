@@ -69,7 +69,7 @@
 
     &.show {
       transform: translate3d(0, 0, 0);
-      //@include easeOut(1s);
+      @include easeOut(0.5s);
     }
   }
 
@@ -82,25 +82,28 @@
 
     &.show {
       transform: translate3d(0, 0, 0);
-      //@include easeOut(1s);
+      @include easeOut(0.5s);
     }
 
     .portrait {
       width: 250px;
       height: 250px;
       background: url('../img/portrait.jpg');
+      background-position: center;
       border-radius: 50%;
       border: solid 3px $secondary-color;
     }
   }
 
   .nav-item {
+    width: 100%;
+    text-align: center;
     transform: translate3d(600px, 0, 0);
     @include easeOut(0.5s);
 
     &.show {
       transform: translate3d(0, 0, 0);
-      //@include easeOut(1s);
+      @include easeOut(1s);
     }
 
     &.current > a{
@@ -109,17 +112,19 @@
   }
 
   .nav-link {
+    width: 100%;
     display: inline-block;
     position: relative;
     font-size: 2rem;
     text-transform: uppercase;
     padding-left: 1rem;
-    font-weight: 3300;
+    font-weight: 300;
     color: set-text-color($primary-color);
     @include easeOut(0.4s);
 
     &:hover {
       color: $secondary-color;
+      background-color: darken($primary-color, 15);
     }
   }
 }
@@ -127,6 +132,6 @@
 // Delay each nav item slide
 @for $x from 1 through 4 {
   .nav-item:nth-child(#{$x}){
-    transition-delay: $x * 0.2s;
+    transition-delay: $x * 0.3s;
   }
 }
