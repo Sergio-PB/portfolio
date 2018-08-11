@@ -233,9 +233,12 @@ main {
   grid-template-columns: repeat(3, 1fr); }
   .projects img {
     width: 100%;
+    margin-bottom: 1px;
+    max-height: 195px;
     position: relative;
     top: 50%;
-    transform: translate(0, -50%); }
+    left: 50%;
+    transform: translate(-50%, -50%); }
     .projects img:hover {
       opacity: 0.5;
       transition: all 0.2s ease-out; }
