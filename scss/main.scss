@@ -179,8 +179,20 @@ main {
 
   img {
     width: 100%;
-    border: 3px white solid;
+    position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
 
+    &:hover {
+      opacity: 0.5;
+      @include easeOut(0.2s);
+    }
+  }
+
+  div.img-container {
+    height: 200px;
+    margin: 5px 0;
+    border: 3px white solid;
     &:hover {
       opacity: 0.5;
       border-color: $secondary-color;
