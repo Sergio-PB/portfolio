@@ -305,6 +305,18 @@ a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
   color:var(--head);
 }
 .f-steps li strong{color:var(--ink);font-weight:600}
+.f-steps li.has-link{padding:0}
+.f-steps li.has-link::before{top:.95rem}
+.f-steps .step-link{
+  display:block;
+  padding:.9rem 0 .9rem 2.2rem;
+  color:inherit;
+  text-decoration:none;
+  cursor:pointer;
+  transition:background .15s ease;
+}
+.f-steps .step-link:hover{background:color-mix(in srgb, var(--paper), #000 4%)}
+.f-steps .step-link:focus-visible{outline:2px solid var(--head);outline-offset:-2px}
 
 .f-foot{
   border-top:1px dashed var(--rule);
@@ -620,88 +632,88 @@ html.i18n-fade.is-switching main{opacity:0}
 /* ================= data — the fichas (English base) ================= */
 const FICHAS = [
   {
-    role:"Sr Software Engineer",
-    dish:"«prato da casa»",
+    role:"Senior Software Engineer",
+    dish:"TypeScript monorepo maintained under an AI-first workflow.",
     icon:"i-rocket",
     course:"course.today",
     org:"Artisan AI",
-    period:{from:"out 2024", to:null, now:true},
+    period:{from:"oct 2024", to:null, now:true},
     mise:"react, nextjs, mastra, postgresql, opensearch, cypress, pulumi, aws",
     steps:[
       {key:"star.s", text:"AI startup creating autonomous BDRs."},
-      {key:"star.t", text:"Design and build core features, including a distributed ETL pipeline."},
-      {key:"star.a", text:"Engage with customers, quickly prototype, iterate, and progressively rollout features with an AI-assisted development workflow."},
+      {key:"star.t", text:"Own core features. Engage with customers. Self-manage and deliver projects from zero to production."},
+      {key:"star.a", text:"Prototype, iterate, and progressively roll out features with an AI-assisted development workflow. Communicate effectively and understand when to delegate."},
       {key:"star.r", text:"Happy customers, E2E-test-covered features, and an agent that turns production error logs into pull requests."}
     ],
-    yield:"servings: TBD"
+    yield:"serves: thousands of self-registered users and large enterprise customers"
   },
   {
     role:"Lead Software Engineer",
-    dish:"«banquete conversacional, para cinco»",
+    dish:"A multi-channel chatbot built before ChatGPT was released.",
     icon:"i-sun",
     course:"course.main",
     org:"Convoso",
-    period:{from:"abr 2021", to:"out 2024"},
+    period:{from:"apr 2021", to:"oct 2024"},
     mise:"python, django, nodejs, graphql, postgresql, redis, aws, docker, kubernetes",
     steps:[
-      {key:"star.s", text:"Los Angeles call-center company behind on the conversational-AI product space."},
+      {key:"star.s", text:"Los Angeles call-center company lacked a modern conversational-AI solution."},
       {key:"star.t", text:"Lead the product from ideation to production deployment."},
       {key:"star.a", text:"Architected the system, hired and led a team of five, and managed the challenges of early-stage growth."},
-      {key:"star.r", text:"A shipped product and a team that actually enjoyed working together."}
+      {key:"star.r", text:"A shipped product and a team that enjoyed working together."}
     ],
-    yield:"servings: TBD"
+    yield:"serves: a microservice farm serving 1.5K calls per second and 60K text messages per day"
   },
   {
     role:"Founder",
-    dish:"«empreendimento solo»",
+    dish:"A full course, including backend, web app, and Android and iOS apps.",
     icon:"i-leaf",
     course:"course.chef",
-    org:"O Esquilo",
+    org:"Off Esquilo",
     period:{from:"jul 2021", to:null, now:true},
     mise:"angular, flutter, django, graphql, postgresql, firebase, aws",
     steps:[
-      {key:"star.s", text:"A conceptual idea for a new product."},
-      {key:"star.t", text:"Take it from \"what if\" to a live, public launch."},
-      {key:"star.a", text:"Wore every possible hat: product, engineering, operations, and everything in between."},
-      {key:"star.r", text:"A live production product and a crash course in founder-ship."}
+      {key:"star.s", text:"A community pressured by inflation."},
+      {key:"star.t", text:"Build a free mobile app for groups to share savings opportunities found in local shops."},
+      {key:"star.a", text:"Hired two freelance engineers, managed them through Trello, and invested time to mentor, develop, and iterate."},
+      {key:"star.r", text:"A live product.", link:"https://offesquilo.com/"}
     ],
-    yield:"servings: TBD"
+    yield:"serves: Brazilian families, personal friends, and business owners"
   },
   {
     role:"Software Engineer II",
-    dish:"«caldo de cem terabytes»",
+    dish:"An email sending platform, a yellow pages call center, and a hackathon prepared in twelve months.",
     icon:"i-laptop",
     course:"course.main",
     org:"Crossover for Work",
-    period:{from:"abr 2020", to:"abr 2021"},
+    period:{from:"apr 2020", to:"apr 2021"},
     mise:"python, pyspark, angular, react, aws, lambda, s3, appsync, dynamodb, rds, api gateway, cloudformation, cognito, glue",
     steps:[
       {key:"star.s", text:"High performance global team. Data drives every decision."},
-      {key:"star.t", text:"Rewrite the stack using modern, cloud-native AWS services."},
-      {key:"star.a", text:"Built a 100TB+ data pipeline with an obsessive level of test coverage (100% LoC, >80% mutation)."},
-      {key:"star.r", text:"Modernized infrastructure and data that actually stayed reliable."}
+      {key:"star.t", text:"Rewrite products using AWS services and as few lines of code as possible."},
+      {key:"star.a", text:"Built a 100TB+ data pipeline with a respectable level of test coverage (100% LoC, >80% mutation)."},
+      {key:"star.r", text:"Two rewritten products, and three AWS certifications."}
     ],
-    yield:"servings: TBD"
+    yield:"serves: corporate US-based users"
   },
   {
-    role:"Jr Backend Engineer",
-    dish:"«o interno que se automatizou»",
+    role:"Junior Backend Engineer",
+    dish:"A whitelabel B2B Learning Management System (LMS).",
     icon:"i-laptop",
     course:"course.opening",
     org:"Ilog Tecnologia",
-    period:{from:"jan 2019", to:"abr 2020"},
+    period:{from:"jan 2019", to:"apr 2020"},
     mise:"java, oracle, nodejs, selenium",
     steps:[
-      {key:"star.s", text:"Joined as operations intern with significant manual workloads."},
-      {key:"star.t", text:"Automate operational tasks to reclaim engineering time."},
-      {key:"star.a", text:"Automated my own workload until it looked more like engineering than operations."},
-      {key:"star.r", text:"A promotion to engineer and a company chatbot."}
+      {key:"star.s", text:"A manual customer implementation process."},
+      {key:"star.t", text:"Read CSV spreadsheets, correlate data, and fill web forms."},
+      {key:"star.a", text:"Proactively wrote Selenium scripts in Python that automated most of the flow."},
+      {key:"star.r", text:"Reduction of the implementation time from 4 weeks to 6 hours, and a promotion to Junior Backend Engineer."}
     ],
-    yield:"servings: TBD"
+    yield:"serves: thousands of users spread across HR team and employees"
   },
   {
     role:"Fullstack Developer",
-    dish:"«consultório em caixa»",
+    dish:"A web app with a local SQLite database, backed up to Google Drive.",
     icon:"i-doctor",
     course:"course.opening",
     org:"Locus Psicodrama",
@@ -709,27 +721,27 @@ const FICHAS = [
     mise:"python, django, react, postgresql, google drive",
     steps:[
       {key:"star.s", text:"Therapy clinic relied on paper-based session reports."},
-      {key:"star.t", text:"Transform the reporting workflow into a simple, affordable digital product."},
-      {key:"star.a", text:"Developed and deployed an on-premise solution that respected data privacy and clinic workflows."},
-      {key:"star.r", text:"Zero paper reports and significantly less therapist frustration."}
+      {key:"star.t", text:"Modernize the reporting workflow into a digital product."},
+      {key:"star.a", text:"Developed and deployed an on-premise solution with full governance, deployed on the LAN."},
+      {key:"star.r", text:"Zero paper reports, less therapist frustration, and a solution that costs $0 per month."}
     ],
-    yield:"servings: TBD"
+    yield:"serves: employees of a family-owned business"
   },
   {
     role:"Research Fellow",
-    dish:"«enxame multi-agente»",
+    dish:"Investigation and application of Multi-Agent Systems (MAS) solutions.",
     icon:"i-search",
     course:"course.amuse",
     org:"UFSC — multi-agent systems",
     period:{from:"mar 2018", to:"mar 2020"},
     mise:"apache camel, springboot, graphql, kubernetes, istio",
     steps:[
-      {key:"star.s", text:"Multi-Agent Systems (MAS) needing a bridge to the real world."},
-      {key:"star.t", text:"Develop components for MAS to integrate with services like Telegram."},
-      {key:"star.a", text:"Architected a GraphQL server and orchestrated the deployment with Kubernetes and Istio."},
-      {key:"star.r", text:"A maintainable pattern that survived the author and helped subsequent research."}
+      {key:"star.s", text:"Research project funded by Brazilian national oil and gas company Petrobras."},
+      {key:"star.t", text:"Implement MAS in an industrial process in a simulated environment."},
+      {key:"star.a", text:"Created an Apache Camel component to integrate a MAS language, JaCaMo, with an industrial software developed and owned by the Petrobras engineering team."},
+      {key:"star.r", text:"Two published papers and a contribution to open source software."}
     ],
-    yield:"servings: TBD"
+    yield:"serves: internal users"
   }
 ];
 
@@ -761,7 +773,7 @@ const BASE = {
   "deck.region":"Career experience — use left and right arrow keys to flip",
   "ui.prev":"previous",
   "ui.next":"next",
-  "ui.now":"now",
+  "ui.now":"present",
   "ui.de":"of",
   "course.amuse":"amuse-bouche",
   "course.opening":"opening course",
@@ -959,438 +971,466 @@ const FICHA_STR = {
   pt: langSrc([
     {
       role:"Engenheiro de Software Sênior",
-      dish:"«prato da casa»",
+      dish:"Monorepo TypeScript mantido sob um fluxo de trabalho AI-first.",
       org:"Artisan AI",
       period:{from:"out 2024", to:null, now:true},
       steps:[
         {key:"star.s", text:"Startup de IA criando BDRs autônomos."},
-        {key:"star.t", text:"Projetar e construir funcionalidades principais, incluindo um pipeline de ETL distribuído."},
-        {key:"star.a", text:"Engajar com clientes, prototipar rapidamente, iterar e lançar funcionalidades progressivamente com um fluxo de desenvolvimento assistido por IA."},
+        {key:"star.t", text:"Assumir funcionalidades principais. Engajar com clientes. Autogerenciar-se e entregar projetos do zero à produção."},
+        {key:"star.a", text:"Prototipar, iterar e lançar funcionalidades progressivamente com um fluxo de desenvolvimento assistido por IA. Comunicar-se com eficácia e entender quando delegar."},
         {key:"star.r", text:"Clientes satisfeitos, funcionalidades com cobertura de testes E2E e um agente que transforma logs de erro de produção em pull requests."}
       ],
-      yield:"rendimento: US$ 35 mil/mês devolvidos ao caixa"
+      yield:"serve: milhares de usuários autocadastrados e grandes clientes corporativos"
     },
     {
       role:"Engenheiro de Software Líder",
-      dish:"«banquete conversacional, para cinco»",
+      dish:"Um chatbot multicanal construído antes do lançamento do ChatGPT.",
       org:"Convoso",
       period:{from:"abr 2021", to:"out 2024"},
       steps:[
-        {key:"star.s", text:"Empresa de call-center de Los Angeles defasada no espaço de IA conversacional."},
+        {key:"star.s", text:"Empresa de call-center de Los Angeles sem uma solução moderna de IA conversacional."},
         {key:"star.t", text:"Liderar o produto da ideação ao deploy em produção."},
         {key:"star.a", text:"Arquitetou o sistema, contratou e liderou um time de cinco e gerenciou os desafios de crescimento inicial."},
-        {key:"star.r", text:"Um produto lançado e um time que realmente gostava de trabalhar junto."}
+        {key:"star.r", text:"Um produto lançado e um time que gostava de trabalhar junto."}
       ],
-      yield:"rendimento: 1 produto, 5 cozinheiros"
+      yield:"serve: um conjunto de microsserviços atendendo 1,5 mil chamadas por segundo e 60 mil mensagens de texto por dia"
     },
     {
       role:"Fundador",
-      dish:"«empreendimento solo»",
-      org:"O Esquilo",
+      dish:"Um conjunto completo, incluindo backend, web app e apps Android e iOS.",
+      org:"Off Esquilo",
       period:{from:"jul 2021", to:null, now:true},
       steps:[
-        {key:"star.s", text:"Uma ideia conceitual para um novo produto."},
-        {key:"star.t", text:"Levar do \"e se\" para um lançamento público e ao vivo."},
-        {key:"star.a", text:"Usou todos os chapéus possíveis: produto, engenharia, operações e tudo no meio do caminho."},
-        {key:"star.r", text:"Um produto em produção e um curso intensivo de como ser fundador."}
+        {key:"star.s", text:"Uma comunidade pressionada pela inflação."},
+        {key:"star.t", text:"Construir um app móvel gratuito para grupos compartilharem oportunidades de economia encontradas em lojas locais."},
+        {key:"star.a", text:"Contratou dois engenheiros freelancers, gerenciou-os pelo Trello e investiu tempo em mentorar, desenvolver e iterar."},
+        {key:"star.r", text:"Um produto no ar."}
       ],
-      yield:"rendimento: ainda no forno"
+      yield:"serve: famílias brasileiras, amigos pessoais e donos de negócios"
     },
     {
       role:"Engenheiro de Software II",
-      dish:"«caldo de cem terabytes»",
+      dish:"Uma plataforma de envio de e-mails, um call center de páginas amarelas e um hackathon preparados em doze meses.",
       org:"Crossover for Work",
       period:{from:"abr 2020", to:"abr 2021"},
       steps:[
         {key:"star.s", text:"Time global de alta performance. Dados impulsionam cada decisão."},
-        {key:"star.t", text:"Reescrever a stack usando serviços AWS modernos e cloud-native."},
-        {key:"star.a", text:"Construiu um pipeline de dados de 100 TB+ com um nível obsessivo de cobertura de testes (100% LoC, >80% mutação)."},
-        {key:"star.r", text:"Infraestrutura modernizada e dados que realmente ficaram confiáveis."}
+        {key:"star.t", text:"Reescrever produtos usando serviços AWS e o mínimo possível de linhas de código."},
+        {key:"star.a", text:"Construiu um pipeline de dados de 100 TB+ com um respeitável nível de cobertura de testes (100% LoC, >80% mutação)."},
+        {key:"star.r", text:"Dois produtos reescritos e três certificações AWS."}
       ],
-      yield:"rendimento: 100 TB em movimento"
+      yield:"serve: usuários corporativos baseados nos EUA"
     },
     {
-      role:"Engenheiro Backend Jr",
-      dish:"«o interno que se automatizou»",
+      role:"Engenheiro Backend Júnior",
+      dish:"Um Learning Management System (LMS) B2B white-label.",
       org:"Ilog Tecnologia",
       period:{from:"jan 2019", to:"abr 2020"},
       steps:[
-        {key:"star.s", text:"Entrou como estagiário de operações com cargas de trabalho manuais significativas."},
-        {key:"star.t", text:"Automatizar tarefas operacionais para recuperar tempo de engenharia."},
-        {key:"star.a", text:"Automatizou a própria carga de trabalho até que parecesse mais engenharia do que operações."},
-        {key:"star.r", text:"Uma promoção a engenheiro e um chatbot da empresa."}
+        {key:"star.s", text:"Processo manual de implantação de clientes."},
+        {key:"star.t", text:"Ler planilhas CSV, correlacionar dados e preencher formulários web."},
+        {key:"star.a", text:"Escreveu proativamente scripts Selenium em Python que automatizaram a maior parte do fluxo."},
+        {key:"star.r", text:"Redução do tempo de implantação de 4 semanas para 6 horas e uma promoção a Engenheiro Backend Júnior."}
       ],
-      yield:"rendimento: de estagiário a engenheiro"
+      yield:"serve: milhares de usuários espalhados entre a equipe de RH e os funcionários"
     },
     {
       role:"Desenvolvedor Fullstack",
-      dish:"«consultório em caixa»",
+      dish:"Um web app com um banco de dados SQLite local, com backup no Google Drive.",
       org:"Locus Psicodrama",
       period:{from:"jul 2018", to:"jan 2019"},
       steps:[
         {key:"star.s", text:"Clínica de terapia dependia de relatórios de sessão em papel."},
-        {key:"star.t", text:"Transformar o fluxo de relatórios em um produto digital simples e acessível."},
-        {key:"star.a", text:"Desenvolveu e implantou uma solução on-premise que respeitava a privacidade dos dados e os fluxos da clínica."},
-        {key:"star.r", text:"Zero relatórios em papel e terapeutas significativamente menos frustrados."}
+        {key:"star.t", text:"Modernizar o fluxo de relatórios em um produto digital."},
+        {key:"star.a", text:"Desenvolveu e implantou uma solução on-premise com governança total, implantada na LAN."},
+        {key:"star.r", text:"Zero relatórios em papel, menos frustração dos terapeutas e uma solução que custa $0 por mês."}
       ],
-      yield:"rendimento: relatórios sem papel"
+      yield:"serve: funcionários de um negócio familiar"
     },
     {
       role:"Bolsista de Pesquisa",
-      dish:"«enxame multiagente»",
+      dish:"Investigação e aplicação de soluções de Sistemas Multiagentes (SMA).",
       org:"UFSC — sistemas multiagentes",
       period:{from:"mar 2018", to:"mar 2020"},
       steps:[
-        {key:"star.s", text:"Sistemas Multiagentes (SMA) precisando de uma ponte para o mundo real."},
-        {key:"star.t", text:"Desenvolver componentes para que SMA se integrem a serviços como o Telegram."},
-        {key:"star.a", text:"Arquitetou um servidor GraphQL e orquestrou o deploy com Kubernetes e Istio."},
-        {key:"star.r", text:"Um padrão sustentável que sobreviveu ao autor e ajudou pesquisas subsequentes."}
+        {key:"star.s", text:"Projeto de pesquisa financiado pela Petrobras, estatal brasileira de petróleo e gás."},
+        {key:"star.t", text:"Implementar SMA em um processo industrial em um ambiente simulado."},
+        {key:"star.a", text:"Criou um componente Apache Camel para integrar uma linguagem de SMA, JaCaMo, a um software industrial desenvolvido e mantido pela equipe de engenharia da Petrobras."},
+        {key:"star.r", text:"Dois artigos publicados e uma contribuição para software de código aberto."}
       ],
-      yield:"rendimento: 1 padrão que sobreviveu ao autor"
+      yield:"serve: usuários internos"
     }
   ]),
   fr: langSrc([
     {
       role:"Ingénieur logiciel senior",
-      dish:"« plat de la maison »",
+      dish:"Monorepo TypeScript maintenu selon un flux de travail axé sur l'IA.",
       org:"Artisan AI",
       period:{from:"oct 2024", to:null, now:true},
       steps:[
         {key:"star.s", text:"Startup d'IA créant des BDR autonomes."},
-        {key:"star.t", text:"Concevoir et construire des fonctionnalités clés, dont un pipeline ETL distribué."},
-        {key:"star.a", text:"Collaborer avec les clients, prototyper rapidement, itérer et déployer progressivement des fonctionnalités via un flux de développement assisté par l'IA."},
+        {key:"star.t", text:"Prendre en charge des fonctionnalités clés. Échanger avec les clients. S'autogérer et livrer des projets de zéro à la production."},
+        {key:"star.a", text:"Prototyper, itérer et déployer progressivement des fonctionnalités via un flux de développement assisté par l'IA. Communiquer efficacement et savoir quand déléguer."},
         {key:"star.r", text:"Clients satisfaits, fonctionnalités couvertes par des tests E2E et un agent qui transforme les logs d'erreurs de production en pull requests."}
       ],
-      yield:"rendement : 35 K$/mois rendus à la caisse"
+      yield:"sert : des milliers d'utilisateurs auto-inscrits et de grands clients d'entreprise"
     },
     {
       role:"Ingénieur logiciel lead",
-      dish:"« banquet conversationnel, pour cinq »",
+      dish:"Un chatbot multicanal construit avant la sortie de ChatGPT.",
       org:"Convoso",
       period:{from:"avr 2021", to:"oct 2024"},
       steps:[
-        "Rejoindre comme ingénieur senior, devenir lead du produit d'IA conversationnelle.",
-        "Posséder l'architecture de l'idéation au déploiement.",
-        "<strong>Recruter et diriger une équipe de cinq.</strong>",
-        "Livrer le produit."
+        {key:"star.s", text:"Entreprise de centre d'appels de Los Angeles dépourvue d'une solution d'IA conversationnelle moderne."},
+        {key:"star.t", text:"Diriger le produit de l'idéation au déploiement en production."},
+        {key:"star.a", text:"A architecturé le système, recruté et dirigé une équipe de cinq personnes, et géré les défis de la croissance initiale."},
+        {key:"star.r", text:"Un produit livré et une équipe qui aimait travailler ensemble."}
       ],
-      yield:"rendement : 1 produit, 5 cuisiniers"
+      yield:"sert : une ferme de microservices traitant 1 500 appels par seconde et 60 000 messages texte par jour"
     },
     {
       role:"Fondateur",
-      dish:"« entreprise solo »",
-      org:"O Esquilo",
+      dish:"Un ensemble complet, comprenant le backend, une application web et des applications Android et iOS.",
+      org:"Off Esquilo",
       period:{from:"juil 2021", to:null, now:true},
       steps:[
-        "Mener une idée jusqu'à un produit en ligne.",
-        "Porter la casquette produit, la casquette ingénierie, <strong>et toutes les autres casquettes du chemin.</strong>"
+        {key:"star.s", text:"Une communauté sous la pression de l'inflation."},
+        {key:"star.t", text:"Créer une application mobile gratuite permettant à des groupes de partager les bons plans trouvés dans les commerces locaux."},
+        {key:"star.a", text:"A recruté deux ingénieurs indépendants, les a gérés via Trello et a investi du temps pour les encadrer, développer et itérer."},
+        {key:"star.r", text:"Un produit en ligne."}
       ],
-      yield:"rendement : encore au four"
+      yield:"sert : des familles brésiliennes, des amis proches et des chefs d'entreprise"
     },
     {
       role:"Ingénieur logiciel II",
-      dish:"« bouillon de cent téraoctets »",
+      dish:"Une plateforme d'envoi d'e-mails, un centre d'appels pour annuaire et un hackathon préparés en douze mois.",
       org:"Crossover for Work",
       period:{from:"avr 2020", to:"avr 2021"},
       steps:[
-        "Réécrire des produits legacy avec (presque) uniquement des services AWS.",
-        "Construire un <strong>pipeline de données de 100 To+</strong> avec tests automatisés : 100 % de couverture LoC, plus de 80 % de mutation, moins de 30 % de couverture accidentelle."
+        {key:"star.s", text:"Équipe internationale haute performance. Les données guident chaque décision."},
+        {key:"star.t", text:"Réécrire des produits en utilisant des services AWS et le moins de lignes de code possible."},
+        {key:"star.a", text:"A construit un pipeline de données de plus de 100 To avec un niveau respectable de couverture de tests (100 % LoC, >80 % de mutation)."},
+        {key:"star.r", text:"Deux produits réécrits et trois certifications AWS."}
       ],
-      yield:"rendement : 100 To en mouvement"
+      yield:"sert : des utilisateurs d'entreprise basés aux États-Unis"
     },
     {
-      role:"Ingénieur backend jr",
-      dish:"« le stagiaire qui s'est automatisé »",
+      role:"Ingénieur backend junior",
+      dish:"Un Learning Management System (LMS) B2B en marque blanche.",
       org:"Ilog Tecnologia",
       period:{from:"janv 2019", to:"avr 2020"},
       steps:[
-        "Rejoindre comme stagiaire aux opérations.",
-        "<strong>Automatiser ma propre charge de travail jusqu'à l'ingénierie.</strong>",
-        "Partir en travaillant sur le chatbot de l'entreprise."
+        {key:"star.s", text:"Un processus manuel de mise en œuvre chez les clients."},
+        {key:"star.t", text:"Lire des feuilles de calcul CSV, corréler les données et remplir des formulaires web."},
+        {key:"star.a", text:"A écrit proactivement des scripts Selenium en Python qui ont automatisé la majeure partie du flux."},
+        {key:"star.r", text:"Réduction du temps de mise en œuvre de 4 semaines à 6 heures, et une promotion au poste d'ingénieur backend junior."}
       ],
-      yield:"rendement : de stagiaire à ingénieur"
+      yield:"sert : des milliers d'utilisateurs répartis entre l'équipe RH et les employés"
     },
     {
       role:"Développeur fullstack",
-      dish:"« cabinet en boîte »",
+      dish:"Une application web avec une base de données SQLite locale, sauvegardée sur Google Drive.",
       org:"Locus Psicodrama",
       period:{from:"juil 2018", to:"janv 2019"},
       steps:[
-        "Reprendre le flux manuel de rapports de séance des thérapeutes.",
-        "Le transformer en un produit simple et abordable, <strong>déployé on-premise.</strong>"
+        {key:"star.s", text:"Une clinique thérapeutique dépendait de rapports de séance papier."},
+        {key:"star.t", text:"Moderniser le flux de rapports en un produit numérique."},
+        {key:"star.a", text:"A développé et déployé une solution on-premise avec une gouvernance complète, déployée sur le LAN."},
+        {key:"star.r", text:"Zéro rapport papier, moins de frustration pour les thérapeutes, et une solution qui coûte 0 $ par mois."}
       ],
-      yield:"rendement : des rapports sans papier"
+      yield:"sert : les employés d'une entreprise familiale"
     },
     {
       role:"Stagiaire chercheur",
-      dish:"« essaim multi-agents »",
+      dish:"Étude et application de solutions de systèmes multi-agents (SMA).",
       org:"UFSC — systèmes multi-agents",
       period:{from:"mars 2018", to:"mars 2020"},
       steps:[
-        "Développer un composant Apache Camel intégrant des systèmes multi-agents à des services comme un bot Telegram.",
-        "Démontrer les bénéfices de l'orchestration de conteneurs pour les SMA avec Kubernetes et Istio.",
-        "Architecturer un serveur GraphQL avec SpringBoot pour l'intégration des SMA.",
-        "<strong>Laisser un motif maintenable pour que la recherche continue de croître.</strong>"
+        {key:"star.s", text:"Projet de recherche financé par Petrobras, compagnie pétrolière et gazière nationale brésilienne."},
+        {key:"star.t", text:"Mettre en œuvre des SMA dans un processus industriel au sein d'un environnement simulé."},
+        {key:"star.a", text:"A créé un composant Apache Camel pour intégrer un langage SMA, JaCaMo, à un logiciel industriel développé et détenu par l'équipe d'ingénierie de Petrobras."},
+        {key:"star.r", text:"Deux articles publiés et une contribution à un logiciel open source."}
       ],
-      yield:"rendement : 1 motif qui a survécu à son auteur"
+      yield:"sert : des utilisateurs internes"
     }
   ]),
   es: langSrc([
     {
       role:"Ingeniero de software senior",
-      dish:"«plato de la casa»",
+      dish:"Monorepo TypeScript mantenido con un flujo de trabajo centrado en la IA.",
       org:"Artisan AI",
       period:{from:"oct 2024", to:null, now:true},
       steps:[
         {key:"star.s", text:"Startup de IA creando BDRs autónomos."},
-        {key:"star.t", text:"Diseñar y construir funcionalidades principales, incluyendo un pipeline de ETL distribuido."},
-        {key:"star.a", text:"Interactuar con clientes, prototipar rápidamente, iterar y desplegar funcionalidades progresivamente con un flujo de desarrollo asistido por IA."},
+        {key:"star.t", text:"Hacerse cargo de funcionalidades principales. Interactuar con clientes. Autogestionarse y entregar proyectos de cero a producción."},
+        {key:"star.a", text:"Prototipar, iterar y desplegar funcionalidades progresivamente con un flujo de desarrollo asistido por IA. Comunicarse eficazmente y saber cuándo delegar."},
         {key:"star.r", text:"Clientes satisfechos, funcionalidades con cobertura de pruebas E2E y un agente que transforma los logs de error de producción en pull requests."}
       ],
-      yield:"rendimiento: $35K/mes devueltos a la caja"
+      yield:"sirve: miles de usuarios autoregistrados y grandes clientes corporativos"
     },
     {
       role:"Ingeniero de software líder",
-      dish:"«banquete conversacional, para cinco»",
+      dish:"Un chatbot multicanal construido antes del lanzamiento de ChatGPT.",
       org:"Convoso",
       period:{from:"abr 2021", to:"oct 2024"},
       steps:[
-        "Unirme como ingeniero senior y crecer hasta liderar el producto de IA conversacional.",
-        "Ser dueño de la arquitectura de la ideación al despliegue.",
-        "<strong>Contratar y liderar un equipo de cinco.</strong>",
-        "Lanzar el producto."
+        {key:"star.s", text:"Empresa de call center de Los Ángeles que carecía de una solución moderna de IA conversacional."},
+        {key:"star.t", text:"Liderar el producto desde la ideación hasta el despliegue en producción."},
+        {key:"star.a", text:"Arquitectó el sistema, contrató y lideró un equipo de cinco personas, y gestionó los desafíos del crecimiento inicial."},
+        {key:"star.r", text:"Un producto lanzado y un equipo que disfrutaba trabajar junto."}
       ],
-      yield:"rendimiento: 1 producto, 5 cocineros"
+      yield:"sirve: una granja de microservicios atendiendo 1.500 llamadas por segundo y 60.000 mensajes de texto al día"
     },
     {
       role:"Fundador",
-      dish:"«emprendimiento en solitario»",
-      org:"O Esquilo",
+      dish:"Un menú completo, incluyendo backend, aplicación web y apps para Android e iOS.",
+      org:"Off Esquilo",
       period:{from:"jul 2021", to:null, now:true},
       steps:[
-        "Llevar una idea a un producto en vivo.",
-        "Vestir el sombrero de producto, el de ingeniería, <strong>y todos los demás sombreros del camino.</strong>"
+        {key:"star.s", text:"Una comunidad presionada por la inflación."},
+        {key:"star.t", text:"Construir una app móvil gratuita para que grupos compartan oportunidades de ahorro encontradas en tiendas locales."},
+        {key:"star.a", text:"Contrató a dos ingenieros freelance, los gestionó a través de Trello e invirtió tiempo en mentorizar, desarrollar e iterar."},
+        {key:"star.r", text:"Un producto en producción."}
       ],
-      yield:"rendimiento: aún en el horno"
+      yield:"sirve: familias brasileñas, amigos personales y dueños de negocios"
     },
     {
       role:"Ingeniero de software II",
-      dish:"«caldo de cien terabytes»",
+      dish:"Una plataforma de envío de correos electrónicos, un call center de páginas amarillas y un hackathon preparados en doce meses.",
       org:"Crossover for Work",
       period:{from:"abr 2020", to:"abr 2021"},
       steps:[
-        "Reescribir productos legacy con (casi) solo servicios AWS.",
-        "Construir un <strong>pipeline de datos de 100 TB+</strong> con pruebas automatizadas: 100% de cobertura de LoC, más del 80% de mutación, menos del 30% de cobertura accidental."
+        {key:"star.s", text:"Equipo global de alto rendimiento. Los datos impulsan cada decisión."},
+        {key:"star.t", text:"Reescribir productos usando servicios AWS y la menor cantidad de líneas de código posible."},
+        {key:"star.a", text:"Construyó un pipeline de datos de más de 100 TB con un nivel respetable de cobertura de pruebas (100 % LoC, >80 % de mutación)."},
+        {key:"star.r", text:"Dos productos reescritos y tres certificaciones de AWS."}
       ],
-      yield:"rendimiento: 100 TB en movimiento"
+      yield:"sirve: usuarios corporativos con sede en EE. UU."
     },
     {
-      role:"Ingeniero backend jr",
-      dish:"«el becario que se automatizó»",
+      role:"Ingeniero backend junior",
+      dish:"Un Learning Management System (LMS) B2B de marca blanca.",
       org:"Ilog Tecnologia",
       period:{from:"ene 2019", to:"abr 2020"},
       steps:[
-        "Unirme como becario de operaciones.",
-        "<strong>Automatizar mi propia carga de trabajo hasta llegar a ingeniería.</strong>",
-        "Irme trabajando en el chatbot de la empresa."
+        {key:"star.s", text:"Un proceso manual de implementación de clientes."},
+        {key:"star.t", text:"Leer hojas de cálculo CSV, correlacionar datos y completar formularios web."},
+        {key:"star.a", text:"Escribió proactivamente scripts de Selenium en Python que automatizaron la mayor parte del flujo."},
+        {key:"star.r", text:"Reducción del tiempo de implementación de 4 semanas a 6 horas, y una promoción a ingeniero backend junior."}
       ],
-      yield:"rendimiento: de becario a ingeniero"
+      yield:"sirve: miles de usuarios repartidos entre el equipo de RR. HH. y los empleados"
     },
     {
       role:"Desarrollador fullstack",
-      dish:"«consultorio en caja»",
+      dish:"Una aplicación web con una base de datos SQLite local, con copia de seguridad en Google Drive.",
       org:"Locus Psicodrama",
       period:{from:"jul 2018", to:"ene 2019"},
       steps:[
-        "Tomar el flujo manual de informes de sesión de los terapeutas.",
-        "Convertirlo en un producto simple y asequible, <strong>desplegado on-premise.</strong>"
+        {key:"star.s", text:"Una clínica terapéutica dependía de informes de sesión en papel."},
+        {key:"star.t", text:"Modernizar el flujo de informes en un producto digital."},
+        {key:"star.a", text:"Desarrolló y desplegó una solución on-premise con gobernanza total, desplegada en la LAN."},
+        {key:"star.r", text:"Cero informes en papel, menos frustración para los terapeutas y una solución que cuesta 0 $ al mes."}
       ],
-      yield:"rendimiento: informes sin papel"
+      yield:"sirve: los empleados de un negocio familiar"
     },
     {
       role:"Becario de investigación",
-      dish:"«enjambre multiagente»",
+      dish:"Investigación y aplicación de soluciones de sistemas multiagente (SMA).",
       org:"UFSC — sistemas multiagente",
       period:{from:"mar 2018", to:"mar 2020"},
       steps:[
-        "Desarrollar un componente Apache Camel integrando sistemas multiagente con servicios como un bot de Telegram.",
-        "Demostrar los beneficios de la orquestación de contenedores para SMA usando Kubernetes e Istio.",
-        "Arquitectar un servidor GraphQL con SpringBoot para la integración de SMA.",
-        "<strong>Dejar un patrón mantenible para que la investigación siguiera creciendo.</strong>"
+        {key:"star.s", text:"Proyecto de investigación financiado por Petrobras, la empresa nacional brasileña de petróleo y gas."},
+        {key:"star.t", text:"Implementar SMA en un proceso industrial dentro de un entorno simulado."},
+        {key:"star.a", text:"Creó un componente de Apache Camel para integrar un lenguaje SMA, JaCaMo, con un software industrial desarrollado y propiedad del equipo de ingeniería de Petrobras."},
+        {key:"star.r", text:"Dos artículos publicados y una contribución al software de código abierto."}
       ],
-      yield:"rendimiento: 1 patrón que sobrevivió a su autor"
+      yield:"sirve: usuarios internos"
     }
   ]),
   ja: langSrc([
     {
       role:"シニアソフトウェアエンジニア",
-      dish:"«本日のおすすめ»",
+      dish:"AIファーストのワークフローで保守されているTypeScriptモノレポ。",
       org:"Artisan AI",
       period:{from:"2024年10月", to:null, now:true},
       steps:[
         {key:"star.s", text:"自律型BDRを構築するAIスタートアップ。"},
-        {key:"star.t", text:"分散型ETLパイプラインを含むコア機能の設計と構築。"},
-        {key:"star.a", text:"顧客との対話、迅速なプロトタイピング、反復、そしてAI支援開発ワークフローによる機能の段階的なロールアウト。"},
-        {key:"star.r", text:"顧客満足度の向上、E2Eテスト済みの機能、および本番エラーログをプルリクエストに変換するエージェント。"}
+        {key:"star.t", text:"コア機能を担当。顧客と対話。自律的に管理し、プロジェクトをゼロから本番環境まで届ける。"},
+        {key:"star.a", text:"AI支援開発ワークフローでプロトタイプを作成し、反復し、機能を段階的にロールアウト。効果的にコミュニケーションを取り、委任すべきタイミングを理解する。"},
+        {key:"star.r", text:"満足した顧客、E2Eテストでカバーされた機能、そして本番エラーログをプルリクエストに変換するエージェント。"}
       ],
-      yield:"出来高：月額35Kドルを社内に回収"
+      yield:"提供: 数千人のセルフ登録ユーザーと大企業顧客"
     },
     {
       role:"リードソフトウェアエンジニア",
-      dish:"«5人分の会話バンケット»",
+      dish:"ChatGPTのリリース前に構築したマルチチャネルチャットボット。",
       org:"Convoso",
       period:{from:"2021年4月", to:"2024年10月"},
       steps:[
-        "シニアエンジニアとして入社し、会話型AIプロダクトのリードに昇進。",
-        "構想からデプロイまでアーキテクチャを担当。",
-        "<strong>5人のチームを採用し率いる。</strong>",
-        "プロダクトを出荷する。"
+        {key:"star.s", text:"ロサンゼルスのコールセンター企業に、モダンな会話型AIソリューションがなかった。"},
+        {key:"star.t", text:"構想から本番デプロイまでプロダクトをリードする。"},
+        {key:"star.a", text:"システムを設計し、5人のチームを採用して率い、初期成長の課題に対応した。"},
+        {key:"star.r", text:"出荷されたプロダクトと、一緒に働くことを楽しんだチーム。"}
       ],
-      yield:"出来高：プロダクト1つ、料理人5人"
+      yield:"提供: 毎秒1.5K件の通話と1日6万件のテキストメッセージをさばくマイクロサービス群"
     },
     {
       role:"創業者",
-      dish:"«ソロ起業»",
-      org:"O Esquilo",
+      dish:"バックエンド、Webアプリ、Android・iOSアプリを含むフルコース。",
+      org:"Off Esquilo",
       period:{from:"2021年7月", to:null, now:true},
       steps:[
-        "アイデアを稼働中のプロダクトへ。",
-        "プロダクトの帽子、エンジニアリングの帽子、<strong>そして途中のあらゆる帽子をかぶる。</strong>"
+        {key:"star.s", text:"インフレに圧迫されるコミュニティ。"},
+        {key:"star.t", text:"グループが地域の店舗で見つけた節約のチャンスを共有できる無料モバイルアプリを作る。"},
+        {key:"star.a", text:"フリーランスのエンジニア2名を採用し、Trelloで管理し、メンタリング・開発・反復に時間を投じた。"},
+        {key:"star.r", text:"稼働中のプロダクト。"}
       ],
-      yield:"出来高：まだオーブンの中"
+      yield:"提供: ブラジルの家族、親しい友人、中小企業のオーナー"
     },
     {
       role:"ソフトウェアエンジニア II",
-      dish:"«100テラバイトの出汁»",
+      dish:"メール送信プラットフォーム、イエローページコールセンター、そして12か月で準備したハッカソン。",
       org:"Crossover for Work",
       period:{from:"2020年4月", to:"2021年4月"},
       steps:[
-        "レガシープロダクトを（ほぼ）AWSサービスのみで再構築。",
-        "<strong>100TB超のデータパイプライン</strong>を自動テスト付きで構築：LoCカバレッジ100%、ミューテーション80%超、偶発的カバレッジ30%未満。"
+        {key:"star.s", text:"ハイパフォーマンスなグローバルチーム。データがあらゆる意思決定を動かす。"},
+        {key:"star.t", text:"AWSサービスを使い、できるだけ少ないコード行数でプロダクトを再構築する。"},
+        {key:"star.a", text:"十分なテストカバレッジ（LoC 100%、ミューテーション80%超）で100TB超のデータパイプラインを構築した。"},
+        {key:"star.r", text:"2つの再構築されたプロダクトと、3つのAWS認定資格。"}
       ],
-      yield:"出来高：動き続ける100TB"
+      yield:"提供: 米国企業のユーザー"
     },
     {
       role:"バックエンドエンジニア（ジュニア）",
-      dish:"«自分を自動化したインターン»",
+      dish:"ホワイトラベルB2Bラーニングマネジメントシステム（LMS）。",
       org:"Ilog Tecnologia",
       period:{from:"2019年1月", to:"2020年4月"},
       steps:[
-        "オペレーションのインターンとして入社。",
-        "<strong>自分の作業を自動化して、エンジニアへの道を切り開く。</strong>",
-        "退社時には社内チャットボットを担当。"
+        {key:"star.s", text:"手作業の顧客導入プロセス。"},
+        {key:"star.t", text:"CSVスプレッドシートを読み、データを照合し、Webフォームに入力する。"},
+        {key:"star.a", text:"主体的にPythonのSeleniumスクリプトを書き、フローの大部分を自動化した。"},
+        {key:"star.r", text:"導入期間を4週間から6時間に短縮し、バックエンドエンジニア（ジュニア）へ昇進。"}
       ],
-      yield:"出来高：インターンからエンジニアへ"
+      yield:"提供: 人事チームと従業員に広がる数千人のユーザー"
     },
     {
       role:"フルスタック開発者",
-      dish:"«箱入り診療所»",
+      dish:"ローカルのSQLiteデータベースを持ち、Google DriveにバックアップするWebアプリ。",
       org:"Locus Psicodrama",
       period:{from:"2018年7月", to:"2019年1月"},
       steps:[
-        "セラピストの手作業だったセッション報告フローを引き継ぐ。",
-        "シンプルで手頃なプロダクトに変え、<strong>オンプレミスでデプロイ。</strong>"
+        {key:"star.s", text:"セラピークリニックは紙のセッション報告書に依存していた。"},
+        {key:"star.t", text:"報告ワークフローをデジタルプロダクトへ近代化する。"},
+        {key:"star.a", text:"完全なガバナンスを備えたオンプレミスソリューションを開発し、LAN上にデプロイした。"},
+        {key:"star.r", text:"紙の報告書ゼロ、セラピストの不満減少、そして月額0ドルのソリューション。"}
       ],
-      yield:"出来高：紙のいらないレポート"
+      yield:"提供: 家族経営企業の従業員"
     },
     {
       role:"研究助手",
-      dish:"«マルチエージェントの群れ»",
+      dish:"マルチエージェントシステム（MAS）ソリューションの調査と応用。",
       org:"UFSC — マルチエージェントシステム",
       period:{from:"2018年3月", to:"2020年3月"},
       steps:[
-        "Telegramボットなどのサービスとマルチエージェントシステムを統合するApache Camelコンポーネントを開発。",
-        "KubernetesとIstioによるMAS向けコンテナオーケストレーションの利点を実証。",
-        "MAS統合のためのSpringBoot製GraphQLサーバーを設計。",
-        "<strong>研究が成長し続けられるよう、保守可能なパターンを残す。</strong>"
+        {key:"star.s", text:"ブラジルの国営石油・ガス企業Petrobrasが資金提供する研究プロジェクト。"},
+        {key:"star.t", text:"シミュレーション環境で産業プロセスにMASを実装する。"},
+        {key:"star.a", text:"MAS言語JaCaMoを、Petrobrasのエンジニアリングチームが開発・保有する産業ソフトウェアと統合するApache Camelコンポーネントを作成した。"},
+        {key:"star.r", text:"2本の査読付き論文とオープンソースソフトウェアへの貢献。"}
       ],
-      yield:"出来高：作者を生き延びた1つのパターン"
+      yield:"提供: 内部ユーザー"
     }
   ]),
   zh: langSrc([
     {
       role:"高级软件工程师",
-      dish:"«本店招牌»",
+      dish:"在 AI 优先的开发工作流中维护的 TypeScript 单仓（monorepo）。",
       org:"Artisan AI",
       period:{from:"2024年10月", to:null, now:true},
       steps:[
         {key:"star.s", text:"构建自主 BDR 的 AI 初创公司。"},
-        {key:"star.t", text:"设计并构建核心功能，包括分布式 ETL 流水线。"},
-        {key:"star.a", text:"与客户沟通，快速原型设计，迭代，并通过 AI 辅助开发工作流逐步推出功能。"},
-        {key:"star.r", text:"客户满意，功能覆盖 E2E 测试，以及一个将生产错误日志转化为 pull request 的代理。"}
+        {key:"star.t", text:"负责核心功能。与客户沟通。自主管理并把项目从零交付到生产环境。"},
+        {key:"star.a", text:"借助 AI 辅助开发工作流进行原型设计、迭代并逐步推出功能。高效沟通，并懂得何时授权分工。"},
+        {key:"star.r", text:"满意的客户、覆盖 E2E 测试的功能，以及一个能把生产错误日志转化为 pull request 的代理。"}
       ],
-      yield:"产出：每月 3.5 万美元回归现金流"
+      yield:"服务对象：数千名自助注册用户和大型企业客户"
     },
     {
       role:"首席软件工程师",
-      dish:"«五人对话宴席»",
+      dish:"在 ChatGPT 发布之前构建的多渠道聊天机器人。",
       org:"Convoso",
       period:{from:"2021年4月", to:"2024年10月"},
       steps:[
-        "以高级工程师身份加入，晋升为对话式 AI 产品负责人。",
-        "从构想到部署，全面负责架构。",
-        "<strong>招聘并带领五人团队。</strong>",
-        "交付产品。"
+        {key:"star.s", text:"洛杉矶一家呼叫中心公司缺乏现代化的对话式 AI 解决方案。"},
+        {key:"star.t", text:"主导产品从构想到生产部署的全过程。"},
+        {key:"star.a", text:"设计了系统架构，招聘并带领五人团队，应对早期增长的种种挑战。"},
+        {key:"star.r", text:"成功交付的产品，以及一支乐于协作的团队。"}
       ],
-      yield:"产出：1 个产品，5 位厨师"
+      yield:"服务对象：每秒处理 1.5K 次呼叫和每天 6 万条短信的微服务集群"
     },
     {
       role:"创始人",
-      dish:"«一人创业»",
-      org:"O Esquilo",
+      dish:"完整的一套作品，包括后端、Web 应用以及 Android 和 iOS 应用。",
+      org:"Off Esquilo",
       period:{from:"2021年7月", to:null, now:true},
       steps:[
-        "把一个想法变成上线产品。",
-        "戴上产品的帽子、工程的帽子，<strong>以及一路上所有其他的帽子。</strong>"
+        {key:"star.s", text:"一个饱受通胀压力的社区。"},
+        {key:"star.t", text:"打造一款免费移动应用，让群组可以分享在本地商店发现的省钱机会。"},
+        {key:"star.a", text:"招聘了两名自由工程师，通过 Trello 进行管理，并投入时间指导、开发和迭代。"},
+        {key:"star.r", text:"一个已经上线的产品。"}
       ],
-      yield:"产出：仍在烤箱中"
+      yield:"服务对象：巴西家庭、亲友和企业主"
     },
     {
       role:"软件工程师 II",
-      dish:"«百TB高汤»",
+      dish:"一个邮件发送平台、一个黄页呼叫中心，以及一个十二个月内筹备的黑客马拉松。",
       org:"Crossover for Work",
       period:{from:"2020年4月", to:"2021年4月"},
       steps:[
-        "（几乎）只用 AWS 服务重写遗留产品。",
-        "构建 <strong>100TB+ 数据管道</strong>，配自动化测试：LoC 覆盖率 100%，变异测试超 80%，偶发覆盖率低于 30%。"
+        {key:"star.s", text:"高性能的全球团队。数据驱动每一个决策。"},
+        {key:"star.t", text:"使用 AWS 服务重写产品，尽量少写代码。"},
+        {key:"star.a", text:"构建了 100TB+ 的数据管道，测试覆盖率相当可观（LoC 100%，变异测试超 80%）。"},
+        {key:"star.r", text:"两个重写完成的产品和三项 AWS 认证。"}
       ],
-      yield:"产出：100 TB 持续流动"
+      yield:"服务对象：美国企业用户"
     },
     {
       role:"后端工程师（初级）",
-      dish:"«把自己自动化的实习生»",
+      dish:"一个白标 B2B 学习管理系统（LMS）。",
       org:"Ilog Tecnologia",
       period:{from:"2019年1月", to:"2020年4月"},
       steps:[
-        "以运营实习生身份加入。",
-        "<strong>把自己的工作量自动化，走出一条通往工程岗位的路。</strong>",
-        "离开前在做公司的聊天机器人。"
+        {key:"star.s", text:"全靠手动的客户实施流程。"},
+        {key:"star.t", text:"读取 CSV 电子表格、关联数据并填写 Web 表单。"},
+        {key:"star.a", text:"主动用 Python 编写 Selenium 脚本，将大部分流程自动化。"},
+        {key:"star.r", text:"实施时间从 4 周缩短到 6 小时，并晋升为初级后端工程师。"}
       ],
-      yield:"产出：从实习生到工程师"
+      yield:"服务对象：分布在人力资源团队和员工中的数千名用户"
     },
     {
       role:"全栈开发工程师",
-      dish:"«盒装诊所»",
+      dish:"一个使用本地 SQLite 数据库的 Web 应用，备份在 Google Drive 上。",
       org:"Locus Psicodrama",
       period:{from:"2018年7月", to:"2019年1月"},
       steps:[
-        "接手治疗师手工的会话报告流程。",
-        "把它变成简单、实惠的产品，<strong>本地部署。</strong>"
+        {key:"star.s", text:"治疗诊所依赖纸质的会谈报告。"},
+        {key:"star.t", text:"将报告流程现代化为数字产品。"},
+        {key:"star.a", text:"开发并部署了一个具有全面治理能力的本地解决方案，部署在局域网内。"},
+        {key:"star.r", text:"零纸质报告，治疗师的挫败感减少，且解决方案每月花费 0 美元。"}
       ],
-      yield:"产出：无纸化报告"
+      yield:"服务对象：一家家族企业的员工"
     },
     {
       role:"研究员",
-      dish:"«多智能体蜂群»",
+      dish:"多智能体系统（MAS）解决方案的研究与应用。",
       org:"UFSC — 多智能体系统",
       period:{from:"2018年3月", to:"2020年3月"},
       steps:[
-        "开发 Apache Camel 组件，把多智能体系统接入 Telegram 机器人等服务。",
-        "用 Kubernetes 和 Istio 演示容器编排对 MAS 的好处。",
-        "用 SpringBoot 架构用于 MAS 集成的 GraphQL 服务器。",
-        "<strong>留下可维护的模式，让研究持续生长。</strong>"
+        {key:"star.s", text:"由巴西国家石油天然气公司 Petrobras 资助的研究项目。"},
+        {key:"star.t", text:"在模拟环境中将 MAS 应用于工业流程。"},
+        {key:"star.a", text:"创建了一个 Apache Camel 组件，用于将 MAS 语言 JaCaMo 与 Petrobras 工程团队开发并拥有的工业软件集成。"},
+        {key:"star.r", text:"发表了两篇论文，并为开源软件做出了贡献。"}
       ],
-      yield:"产出：1 个比作者活得更久远的模式"
+      yield:"服务对象：内部用户"
     }
   ]),
 };
@@ -1495,6 +1535,7 @@ function render(f){
       <ol>
         ${f.steps.map((s, i) => {
           const star = ["S", "T", "A", "R"];
+          if (s.link) return `<li class="has-link" data-letter="${star[i]}"><a class="step-link" href="${s.link}" target="_blank" rel="noreferrer">${s.text}</a></li>`;
           return `<li data-letter="${star[i]}">${s.text}</li>`;
         }).join("")}
       </ol>
