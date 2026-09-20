@@ -1453,8 +1453,13 @@ function loadFichas(code){
   if (typeof FICHA_STR[code] === "string"){
     FICHA_STR[code] = (new Function(FICHA_STR[code]))();
   }
-  /* merge translated prose over the English base (keeps mise + icon + orgs where absent) */
-  return FICHAS.map((base, i) => ({...base, ...(FICHA_STR[code][i] || {})}));
+  /* merge translated prose over the English base (keeps mise + icon + orgs where absent).
+     steps merge per-entry so non-prose props like `link` survive translation. */
+  return FICHAS.map((base, i) => {
+    const t = FICHA_STR[code][i] || {};
+    const steps = (t.steps || []).map((s, j) => ({...base.steps[j], ...s}));
+    return {...base, ...t, steps};
+  });
 }
 
 let LANG = "en";
